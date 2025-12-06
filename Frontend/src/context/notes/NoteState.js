@@ -2,7 +2,7 @@ import NoteContext from "./NotesContext";
 import { useState, useEffect } from "react";
 
 const NoteState = (props) => {
-  const url = "http://localhost:3000";
+  const url = process.env.REACT_APP_BACKEND_URL || "http://localhost:3000";
   const [userToken, setUserToken] = useState("");
   const [theme, setTheme] = useState("Dark");
   const [notes, setNotes] = useState([]);
@@ -52,7 +52,7 @@ const NoteState = (props) => {
         throw new Error(`Response status: ${response.status}`);
       }
 
-      const result = await response.json();
+      // const result = await response.json();
       // console.log("notes", result);
       // setNotes(result)
     } catch (error) {
@@ -106,7 +106,7 @@ const NoteState = (props) => {
         throw new Error(`Response status: ${response.status}`);
       }
 
-      const result = await response.json();
+      // const result = await response.json();
     } catch (error) {
       console.error(error.message);
     }
@@ -139,7 +139,7 @@ const NoteState = (props) => {
       }
     }
     
-    getAllNotes(userToken);
+    if (userToken) getAllNotes(userToken);
   }, [refress,userToken]);
 
   // Show Alert

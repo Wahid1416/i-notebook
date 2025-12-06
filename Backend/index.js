@@ -2,10 +2,18 @@ const connectToMongo = require('./db.js');
 const express = require('express');
 const cors = require("cors");
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
+
+
+const allowedOrigins = [
+    "http://localhost:3005",      // local frontend
+    process.env.FRONTEND_URL      // deployed frontend domain
+].filter(Boolean);                // remove undefined values
+
+
 
 app.use(cors({
-    origin: "http://localhost:3005",
+    origin: allowedOrigins,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "auth-token"]
 }));
@@ -14,11 +22,6 @@ app.use(cors({
 
 connectToMongo();
 
-
-
-// app.get('/', (req, res))
-
-// Avialble Routes
 
 app.use(express.json());
 
