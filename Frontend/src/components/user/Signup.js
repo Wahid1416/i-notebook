@@ -47,22 +47,22 @@ const sign_up = async (name,email, password) => {
         }}
         className="container"
       >
-        <div className="form-group">
+        <div className="form-group mt-3">
           <label htmlFor="exampleInputEmail1">Name</label>
           <input
             type="text"
-            className="form-control"
+            className="form-control mt-1"
             id="Name"
             placeholder="Enter Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           </div>
-        <div className="form-group">
+        <div className="form-group mt-3">
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input
             type="email"
-            className="form-control"
+            className="form-control mt-1"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Enter email"
@@ -73,11 +73,11 @@ const sign_up = async (name,email, password) => {
             We'll never share your email with anyone else.
           </small>
         </div>
-        <div className="form-group">
+        <div className="form-group mt-3">
           <label htmlFor="exampleInputPassword1">Password</label>
           <input
             type="password"
-            className="form-control"
+            className="form-control mt-1"
             id="exampleInputPassword1"
             placeholder="Password"
             value={password}
@@ -86,7 +86,7 @@ const sign_up = async (name,email, password) => {
         </div>
         <button
           type="submit"
-          className="btn btn-primary my-2"
+          className="btn btn-primary mt-3"
           onClick={async (e) => {
             e.preventDefault();
             let resp = await sign_up(name,email, password);

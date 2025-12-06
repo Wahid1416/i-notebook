@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
 import NoteState from "./context/notes/NoteState";
 import AddNotes from "./components/AddNotes";
 import EditNote from "./components/EditNote";
@@ -24,7 +23,6 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
             <Route path="/add-notes" element={<AddNotes />} />
             <Route path="/edit-note/:id" element={<EditNote />} />
             <Route path="/login" element={<Login />} />

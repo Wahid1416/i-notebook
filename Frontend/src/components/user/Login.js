@@ -42,11 +42,11 @@ export default function Login() {
         }}
         className="container"
       >
-        <div className="form-group">
+        <div className="form-group mt-3">
           <label htmlFor="exampleInputEmail1">Email address</label>
           <input
             type="email"
-            className="form-control"
+            className="form-control mt-1"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Enter email"
@@ -57,11 +57,11 @@ export default function Login() {
             We'll never share your email with anyone else.
           </small>
         </div>
-        <div className="form-group">
+        <div className="form-group mt-3">
           <label htmlFor="exampleInputPassword1">Password</label>
           <input
             type="password"
-            className="form-control"
+            className="form-control mt-1"
             id="exampleInputPassword1"
             placeholder="Password"
             value={password}
@@ -70,7 +70,7 @@ export default function Login() {
         </div>
         <button
           type="submit"
-          className="btn btn-primary my-2"
+          className="btn btn-primary mt-3"
           onClick={async (e) => {
             e.preventDefault();
             let resp = await signin(email, password);
