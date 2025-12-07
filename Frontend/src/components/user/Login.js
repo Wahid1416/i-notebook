@@ -10,7 +10,7 @@ export default function Login() {
 
   const signin = async (email, password) => {
     email=email.toLowerCase();
-    const url_fetch = `http://localhost:3000/api/auth/signin`;
+    const url_fetch = `${process.env.REACT_APP_BACKEND_URL}/api/auth/signin`;
     const response = await fetch(url_fetch, {
       method: "POST",
       headers: {
