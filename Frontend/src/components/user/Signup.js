@@ -12,7 +12,7 @@ export default function Signup() {
 
 const sign_up = async (name,email, password) => {
     email=email.toLowerCase();
-    const url_fetch = `http://localhost:3000/api/auth/createUser`;
+    const url_fetch = `${process.env.REACT_APP_BACKEND_URL}/api/auth/createUser`;
     const response = await fetch(url_fetch, {
       method: "POST",
       headers: {
